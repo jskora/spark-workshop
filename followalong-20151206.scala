@@ -35,6 +35,9 @@ val sentenceSplitter = """(?<=[.\!\?])\s+(?=[A-Z])"""
 val sentences = corpus.flatMap(_.split(sentenceSplitter))
 sentences.cache
 
+// scala> "This is a sentence. And valso is this. One more.".split(sentenceSplitter)
+// res47: Array[String] = Array(This is a sentence., And so is this., One more.)
+
 import scala.annotation.tailrec
 
 def sampleMultinomial[T](dist: List[(T, Int)]): T = {
